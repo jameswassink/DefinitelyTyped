@@ -1,8 +1,3 @@
-// Type definitions for WebRTC 2016-09-13
-// Project: https://www.w3.org/TR/webrtc/
-// Definitions by: Danilo Bargen <https://github.com/dbrgn/>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-//
 // W3 Spec: https://www.w3.org/TR/webrtc/
 //
 // Note: Commented out definitions clash with definitions in lib.es6.d.ts. I
@@ -74,7 +69,6 @@ interface RTCAnswerOptions extends RTCOfferAnswerOptions {
 // https://www.w3.org/TR/webrtc/#idl-def-rtciceserver
 interface RTCIceServer {
     credential?: string | undefined;
-    credentialType?: RTCIceCredentialType | undefined;
     urls: string | string[];
     username?: string | undefined;
 }
@@ -142,7 +136,7 @@ interface RTCRtpCodecCapability {
 
 // https://www.w3.org/TR/webrtc/#idl-def-rtcrtpheaderextensioncapability
 interface RTCRtpHeaderExtensionCapability {
-    uri?: string | undefined;
+    uri: string;
 }
 
 // https://www.w3.org/TR/webrtc/#idl-def-rtcrtpcapabilities

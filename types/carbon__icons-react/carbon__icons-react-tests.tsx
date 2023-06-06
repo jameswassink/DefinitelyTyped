@@ -18,6 +18,12 @@ import {
     UserAccess,
     TextClearFormat,
     IceVision,
+    IbmCloudKubernetesService,
+    LogoSvelte,
+    Plan,
+    BatchJob,
+    WhitePaper,
+    DataCategorical,
 } from "@carbon/icons-react";
 
 <UserAccess />; // $ExpectType Element
@@ -43,3 +49,9 @@ import {
 <LogoKeybase />; // $ExpectType Element
 <Barcode />; // $ExpectType Element
 <CalculationAlt />; // $ExpectType Element
+<IbmCloudKubernetesService />; // $ExpectType Element
+<LogoSvelte />; // $ExpectType Element
+<Plan />; // $ExpectType Element
+<BatchJob />; // $ExpectType Element
+<WhitePaper />; // $ExpectType Element
+<DataCategorical />; // $ExpectType Element

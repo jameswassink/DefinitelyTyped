@@ -22,6 +22,7 @@ const playerOptions: VideoJsPlayerOptions = {
         pictureInPictureToggle: audioElement.tagName !== 'AUDIO',
     },
     textTrackSettings: {
+        pauseOnOpen: true,
         persistTextTrackSettings: false,
     },
     controls: true,
@@ -202,6 +203,14 @@ videojs('example_video_1', playerOptions).ready(function playerReady() {
     this.height(480);
 
     const readyState: videojs.ReadyState = this.readyState();
+
+    this.playbackRates([1, 1.5, 2]);
+
+    // $ExpectType number[]
+    const playbackRates: number[] = this.playbackRates();
+
+    // $ExpectType number
+    const defaultPlaybackRate: number = this.defaultPlaybackRate();
 
     // $ExpectType string
     const currentBreakPoint = this.currentBreakpoint();
@@ -462,3 +471,11 @@ function testGetDescendants(player: VideoJsPlayer) {
     // $ExpectType Component | undefined
     player.getDescendant(['string', 'in', 'array'], 'and', 'strings');
 }
+
+videojs.Vhs.xhr.beforeRequest = (options) => {
+    /*
+     * Modifications to requests that will affect every player.
+     */
+
+    return options;
+};
